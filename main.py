@@ -2,7 +2,7 @@
 
 import requests
 import json
-from time import sleep as s
+import time
 import RPi.GPIO as GPIO
 from mfrc522 import MFRC522
 import sys
@@ -30,7 +30,44 @@ def uid_to_num(uid):
         n = n * 256 + uid[i]
     return n
 
+def beepGood():
+    buzzerPin = 21
+
+    GPIO.setup(buzzerPin, GPIO.OUT)
+
+    buzzer = GPIO.PWM(buzzerPin, 443)
+    buzzer.start(10)
+
+    buzzer.ChangeFrequency(600)
+    time.sleep(0.1)
+    buzzer.stop()
+    time.sleep(0.05)
+    buzzer.start(10)
+    buzzer.ChangeFrequency(1000)
+    time.sleep(0.1)
+    buzzer.stop()
+
+
+def beepBad():
+    buzzerPin = 21
+
+    GPIO.setup(buzzerPin, GPIO.OUT)
+
+    buzzer = GPIO.PWM(buzzerPin, 443)
+    buzzer.start(10)
+
+    buzzer.ChangeFrequency(600)
+    time.sleep(0.1)
+    buzzer.stop()
+    time.sleep(0.05)
+    buzzer.start(10)
+    buzzer.ChangeFrequency(400)
+    time.sleep(0.1)
+    buzzer.stop()
+
+
 def main():
+    GPIO.setmode(GPIO.BCM)
     READER = MFRC522()
     id = read_no_block(READER)
     while 1:
@@ -44,13 +81,16 @@ def main():
             r = requests.post(SERVER_ADDRESS, json={"uid": id})
             if r.status_code == 200:
                 pass
+                beepGood()
             else:
                 print("failed to upload")
+                beepBad()
                 print(r.status_code)
 
         # Using exception if upload failed so doesnt crash the program
         except Exception as e:
             print("failed to upload")
+            beepBad()
             print(e)
 
         # Wait untill card leaves range
