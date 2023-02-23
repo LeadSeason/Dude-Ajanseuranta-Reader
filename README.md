@@ -1,8 +1,15 @@
 # RFID reader python script
 
+## Related Projects
+Main:    [ToniLipponen/Dude-Ajanseuranta](https://github.com/ToniLipponen/Dude-Ajanseuranta)  
+Fronend: [LeadSeason/Dude-Ajanseuranta-Frontend](https://github.com/LeadSeason/Dude-Ajanseuranta-Frontend)  
+Backend: [ToniLipponen/Dude-Ajanseuranta-Backend](https://github.com/ToniLipponen/Dude-Ajanseuranta-Backend)  
+Reader:  [LeadSeason/Dude-Ajanseuranta-Reader](https://github.com/LeadSeason/Dude-Ajanseuranta-Reader)
+
 ## How what why
-This script is used to track dude participants in the dude room.
-reading a card will send the card id to the remote server.
+This script is used to track dude participants in the dude room.  
+reading a card will send the card id to the remote server.  
+Originaly this readme was made as an note to future dude participants if changes are wanted
 
 ### Systemd
 Script in ran and kept running on  using systemd services  
@@ -27,6 +34,7 @@ The server location is decided with the variable in the script called: SERVER_AD
 - [ ] Update README Server return with new returns
 - [ ] Add /boot/config.txt configuration
 - [ ] Add more bee sounds. Beep on script start, Beep on new card added, etc
+- [ ] Add reason and why archlinuxarm was used to readme.
 
 ## Issues
 ### script is ran as root.
