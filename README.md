@@ -9,12 +9,12 @@ Script in ran and kept running on  using systemd services
 unit is located in `/etc/systemd/system/card-reader.service`  
 
 systemctl can be used to start, stop, restart and get status  
-status = `systemctl status card-reader.service`  
-start = `systemctl start card-reader.service`  
-stop = `systemctl stop card-reader.service`  
-restart = `systemctl restart card-reader.service`  
-enable on boot = `systemctl enable card-reader.service`  
-disable on boot = `systemctl disable card-reader.service`  
+- status = `systemctl status card-reader.service`  
+- start = `systemctl start card-reader.service`  
+- stop = `systemctl stop card-reader.service`  
+- restart = `systemctl restart card-reader.service`  
+- enable on boot = `systemctl enable card-reader.service`  
+- disable on boot = `systemctl disable card-reader.service`  
 
 ### Server returns
 `200 = ok` card acepted and saved  
@@ -22,6 +22,11 @@ disable on boot = `systemctl disable card-reader.service`
 `500 = Error` Error in backend  
 
 The server location is decided with the variable in the script called: SERVER_ADDRESS
+
+## Todo
+- [ ] Update README Server return with new returns
+- [ ] Add /boot/config.txt configuration
+- [ ] Add more bee sounds. Beep on script start, Beep on new card added, etc
 
 ## Issues
 ### script is ran as root.
