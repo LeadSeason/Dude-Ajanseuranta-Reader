@@ -1,0 +1,11 @@
+[Unit]
+Description=Service for RFid python script
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart=/home/tonnikala/Programming/rfid-pytest/main.py
+
+[Install]
+WantedBy=multi-user.target
