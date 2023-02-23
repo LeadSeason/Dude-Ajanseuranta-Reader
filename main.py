@@ -10,8 +10,8 @@ import sys
 KEY = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
 BLOCK_ADDRS = [8, 9, 10]
 
-
-SERVER_ADDRESS = 'http://192.168.192.11:8080/test'
+SERVER_ADDRESS = 'https://dudeworktimemanagment.leadseason.eu'
+SERVER_POST_PATH = "/api/v1/card/read"
 
 def read_no_block(READER):
     (status, TagType) = READER.MFRC522_Request(READER.PICC_REQIDL)
@@ -73,25 +73,24 @@ def main():
     while 1:
         while not id:
             id = read_no_block(READER)
+            time.sleep(0.4)
 
-        print(f"{id}")
+        print(f"Card id: {id}", file=sys.stderr)
 
         try:
             # Post id to server to be processed
-            r = requests.post(SERVER_ADDRESS, json={"uid": id})
+            r = requests.post(SERVER_ADDRESS+SERVER_POST_PATH, json={"uid": id})
+            print({"uid": id})
             if r.status_code == 200:
-                pass
                 beepGood()
-            else:
-                print("failed to upload")
+            else: 
+                print("failed to upload:", r.status_code, file=sys.stderr)
                 beepBad()
-                print(r.status_code)
 
         # Using exception if upload failed so doesnt crash the program
         except Exception as e:
-            print("failed to upload")
+            print("failed to upload:", e, file=sys.stderr)
             beepBad()
-            print(e)
 
         # Wait untill card leaves range
         # hacky solution because reader returns None every other call
