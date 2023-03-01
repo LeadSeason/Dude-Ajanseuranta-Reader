@@ -23,7 +23,7 @@ systemctl can be used to start, stop, restart and get status
 - enable on boot = `systemctl enable card-reader.service`  
 - disable on boot = `systemctl disable card-reader.service`  
 
-### Server returns
+### Server returns (OutDated)
 `200 = ok` card acepted and saved  
 `420 = No card in database` No card found in database use /add to add new card  
 `500 = Error` Error in backend  
