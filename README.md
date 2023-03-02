@@ -35,6 +35,7 @@ The server location is decided with the variable in the script called: SERVER_AD
 - [ ] Add /boot/config.txt configuration
 - [ ] Add more bee sounds. Beep on script start, Beep on new card added, etc
 - [ ] Add reason and why archlinuxarm was used to readme.
+- [ ] Authentication between server and reader
 
 ## Issues
 ### script is ran as root.
