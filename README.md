@@ -46,3 +46,12 @@ https://archlinuxarm.org/wiki/Raspberry_Pi
 
 ## Questions
 If you have any questions feel free to email me at <a href="mailto:leadseason@proton.me">leadseason@proton.me</a>
+
+
+## License
+<p align="center">
+  <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL-3.0</a>
+  <br>
+  <img href="https://www.gnu.org/licenses/gpl-3.0.en.html" src="https://www.gnu.org/graphics/gplv3-127x51.png">
+</p>
+
