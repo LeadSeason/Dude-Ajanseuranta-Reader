@@ -1,10 +1,12 @@
 # RFID reader python script
 
+
 ## Related Projects
 Main:    [ToniLipponen/Dude-Ajanseuranta](https://github.com/ToniLipponen/Dude-Ajanseuranta)  
 Fronend: [LeadSeason/Dude-Ajanseuranta-Frontend](https://github.com/LeadSeason/Dude-Ajanseuranta-Frontend)  
 Backend: [ToniLipponen/Dude-Ajanseuranta-Backend](https://github.com/ToniLipponen/Dude-Ajanseuranta-Backend)  
 Reader:  [LeadSeason/Dude-Ajanseuranta-Reader](https://github.com/LeadSeason/Dude-Ajanseuranta-Reader)
+
 
 ## How what why
 This script is used to track dude participants in the dude room.  
@@ -30,6 +32,7 @@ systemctl can be used to start, stop, restart and get status
 
 The server location is decided with the variable in the script called: SERVER_ADDRESS
 
+
 ## Todo
 - [ ] Update README Server return with new returns
 - [ ] Add /boot/config.txt configuration
@@ -37,15 +40,24 @@ The server location is decided with the variable in the script called: SERVER_AD
 - [ ] Add reason and why archlinuxarm was used to readme.
 - [ ] Authentication between server and reader
 
+
 ## Issues
+
 ### script is ran as root.
 make group called gpio or use tty group with the permissions to gpio .. etc
 use an unprivilaged user called like cardreader with the group
 only permissions to gpio but not root permissions
 https://archlinuxarm.org/wiki/Raspberry_Pi
 
+
 ## Questions
 If you have any questions feel free to email me at <a href="mailto:leadseason@proton.me">leadseason@proton.me</a>
+
+
+## Wiring
+<p  align="center">
+  <img style="height: 50vh;" src="https://raw.githubusercontent.com/LeadSeason/Dude-Ajanseuranta-Reader/main/CardReaderWiring.png">
+</p>
 
 
 ## License
@@ -54,4 +66,3 @@ If you have any questions feel free to email me at <a href="mailto:leadseason@pr
   <br>
   <img href="https://www.gnu.org/licenses/gpl-3.0.en.html" src="https://www.gnu.org/graphics/gplv3-127x51.png">
 </p>
-
