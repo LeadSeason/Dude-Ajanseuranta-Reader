@@ -1,4 +1,4 @@
-#!/home/tonnikala/Programming/rfid-pytest/venv/bin/python3
+#!/bin/python3
 
 import requests
 import json
@@ -10,7 +10,7 @@ import sys
 KEY = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
 BLOCK_ADDRS = [8, 9, 10]
 
-SERVER_ADDRESS = 'https://dudeworktimemanagment.leadseason.eu'
+SERVER_ADDRESS = 'https://example.com'
 SERVER_POST_PATH = "/api/v1/card/read"
 
 def read_no_block(READER):
