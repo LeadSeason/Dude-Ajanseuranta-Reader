@@ -1,5 +1,7 @@
 # RFID reader python script
 
+> [!NOTE] 
+> Archiving this since Dude project has ended some time ago. 
 
 ## Related Projects
 Main:    [ToniLipponen/Dude-Ajanseuranta](https://github.com/ToniLipponen/Dude-Ajanseuranta)  
